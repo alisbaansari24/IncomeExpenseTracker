@@ -116,9 +116,9 @@ export default function AddWallet() {
                                     backgroundColor: "#ffffff",
                                     paddingHorizontal: 8,
                                 }}
-                                placeholderStyle={{ fontSize: 18, color: "#ffffff" }}   //* placeholder text white
-                                selectedTextStyle={{ fontSize: 15, color: "#ffffff" }}   // *selected text white
-                                itemTextStyle={{ fontSize: 15, color: "#000", }}          //* dropdown items black text
+                                placeholderStyle={{ fontSize: 18 }}   
+                                selectedTextStyle={{ fontSize: 15 }} 
+                                itemTextStyle={{ fontSize: 15 }} 
                                 data={statistics}
                                 labelField="label"
                                 valueField="value"
@@ -188,7 +188,7 @@ export default function AddWallet() {
                         <Pressable className='flex flex-row gap-4 justify-between items-center pt-6'>
                             <Text
                                 onPress={() => navigation.goBack()}
-                                className='rounded-xl text-black bg-gray-400 px-3 py-2 font-semibold'>Cancel</Text>
+                                className='rounded-xl  bg-gray-400 px-3 py-2 font-semibold'>Cancel</Text>
                             <Text
                                 onPress={() => {
                                     console.log("SAve clicked =>", stats);

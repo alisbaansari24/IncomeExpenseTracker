@@ -1,5 +1,5 @@
 import { View, Text, TouchableOpacity, Animated } from 'react-native'
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import Statistics from '../screens/Statistics'
@@ -7,9 +7,10 @@ import HomePage from '../screens/Homepage'
 import Profile from '../screens/Profile'
 import { WalletStack } from './AppNavigation'
 
-const TabButton = ({ item, onPress, accessibilityState }) => {
-  const focused = accessibilityState?.selected;
-  const viewRef = useRef(null)
+const TabButton = ({ item, onPress, focused }) => {
+  // const focused = accessibilityState?.selected===true;
+  // const viewRef = useRef(null)
+  // const [active, setActive] = useState(false)
 
   // useEffect(() => {
   //   if (focused) {
@@ -79,9 +80,16 @@ export default function BottomTab() {
           height: 60,
           position: 'absolute',
           bottom: 0,
+          paddingTop:10,
           right: 16,
           left: 16,
-          borderRadius: 16,
+          borderTopLeftRadius: 16,
+          borderTopRightRadius: 16,
+          // shadowOpacity: 0.15,
+          shadowRadius: 8,
+          elevation: 12,
+          // borderColor:"gray"
+        
 
         }
       }}
@@ -93,12 +101,18 @@ export default function BottomTab() {
           component={item.component}
           options={{
             tabBarShowLabel: false,
-            tabBarButton: (props) => <TabButton {...props} item={item} />
+            tabBarIcon: ({ focused }) => (
+              <Ionicons
+                name={focused ? item.activeIcons : item.inActiveIcon}
+                size={26}
+                color={focused ? '#408782' : '#555'}
+              />
+            ),
           }}
         />
 
       ))}
-      
+
     </Tab.Navigator>
 
   );

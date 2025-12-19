@@ -1,11 +1,11 @@
 import { View, Text, ScrollView, Pressable, Image } from 'react-native'
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { useNavigation } from '@react-navigation/native';
+import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import AddWallet from '../components/AddWallet';
 
@@ -47,9 +47,12 @@ export default function Wallet() {
         setTransactions(JSON.parse(transaction) || []);
         console.log("transaction", JSON.parse(transaction))
     }
-    useEffect(() => {
-        getTotalBal()
-    }, [])
+    
+    useFocusEffect(
+        useCallback(() => {
+            getTotalBal()
+        }, [])
+    )
 
     return (
         <ScrollView className='flex-1 pb-4 '>

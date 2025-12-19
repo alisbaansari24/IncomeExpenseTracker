@@ -7,11 +7,11 @@ import Onboarding from "../src/Onboarding"
 import Homepage from "../screens/Homepage"
 import AddWallet from "../components/AddWallet"
 import Wallet from "../screens/Wallet"
+import { useColorScheme } from 'react-native';
 
 const Stack = createNativeStackNavigator();
 export default function AppNavigation() {
-    const insets = useSafeAreaInsets();
-
+    
     return (
         <Stack.Navigator
             initialRouteName="SplashScreen"
@@ -27,14 +27,14 @@ export default function AppNavigation() {
 
 
 const WalletStack = () => {
-    return(
+    return (
         <Stack.Navigator>
             <Stack.Screen
                 name="wallet"
                 component={Wallet}
                 options={{ headerShown: false }}
             />
-            <Stack.Screen name='add-wallet' component={AddWallet} options={{ headerShown: false }}  />
+            <Stack.Screen name='add-wallet' component={AddWallet} options={{ headerShown: false }} />
         </Stack.Navigator>
     )
 }

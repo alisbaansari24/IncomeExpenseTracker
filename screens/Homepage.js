@@ -40,7 +40,7 @@ export default function Homepage() {
             <Text className='text-white text-3xl font-bold'>Alish Ansari</Text>
           </View>
           <View className='flex items-center justify-center bg-[#FFFFFF0F] ml-auto rounded-lg w-12 h-12'>
-            <Fontisto name="bell" color="#000" size={24} />
+            <Fontisto name="bell" color="#fff" size={24} />
           </View>
         </View>
         <View className='px-6 -mt-24'>

@@ -26,8 +26,8 @@ export default function Profile() {
                         style={{ width: 120, height: 120 }}
                         className="rounded-full bg-white"
                     />
-                    <Text className="text-2xl font-semibold text-center text-white mt-3">Alish Ansari</Text>
-                    <Text className="text-center text-[#E6FFF8] font-semibold">alish@gmail.com</Text>
+                    <Text className="text-2xl font-semibold text-center  mt-3">Alish Ansari</Text>
+                    <Text className="text-center text-[#2A7C76] font-semibold">alish@gmail.com</Text>
                 </View>
             </View>
 

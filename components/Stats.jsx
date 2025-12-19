@@ -41,7 +41,7 @@ export default function Stats() {
 
             <View className='flex flex-row'>
                 <Text className='mb-5 text-2xl text-center'>Statistics</Text>
-                <View className='ml-auto text-end '> <Feather name="download" color="#000" size={24} /></View>
+                <View className='ml-auto text-end '> <Feather name="download"  size={24} /></View>
             </View>
 
             <ScrollView
@@ -53,7 +53,7 @@ export default function Stats() {
                     <Pressable key={index}
                         onPress={() => setSelectWeek(index)}
                         className="mr-8 gap-5">
-                        <Text className={` ${selectWeek === index ? "bg-[#438883]" : "bg-gray-200"} text-white text-md rounded-lg px-4 py-2 font-medium`}>
+                        <Text className={` ${selectWeek === index ? "bg-[#438883]" : "bg-gray-200"}  text-md rounded-xl px-4 py-2 font-medium`}>
                             {item}
                         </Text>
                     </Pressable>
